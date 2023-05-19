@@ -1,0 +1,87 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace combo_box
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string Country = cmbcountry.SelectedItem.ToString();
+            switch (Country)
+            {
+                case "India":
+                    cmbbox2.Items.Clear();
+                    cmbbox2.Items.Add("Maharashtra");
+                    cmbbox2.Items.Add("Goa");
+                    cmbbox2.Items.Add("UP");
+                    break;
+                case "America":
+                    cmbbox2.Items.Clear();
+                    cmbbox2.Items.Add("California");
+                    cmbbox2.Items.Add("Texas");
+                    cmbbox2.Items.Add("Florida");
+                    break;
+                case "China":
+                    cmbbox2.Items.Clear();
+                    cmbbox2.Items.Add("Beijing");
+                    cmbbox2.Items.Add("Tianjin");
+                    cmbbox2.Items.Add("Shanghai");
+                    break;
+                case "England":
+                    cmbbox2.Items.Clear();
+                    cmbbox2.Items.Add("...");
+                    cmbbox2.Items.Add("....");
+                    cmbbox2.Items.Add(".....");
+                    break;
+
+
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            cmbcountry.Items.Add("India");
+            cmbcountry.Items.Add("America");
+            cmbcountry.Items.Add("China");
+            cmbcountry.Items.Add("England");
+
+
+        }
+
+        private void cmbbox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string state = cmbbox2.SelectedItem.ToString();
+            switch (state)
+            {
+                case "Maharashtra":
+                    comboBox3.Items.Clear();
+                    comboBox3.Items.Add("mumbai");
+                    comboBox3.Items.Add("nagpur");
+                    comboBox3.Items.Add("nanded");
+                    break;
+                case "UP":
+                    comboBox3.Items.Clear();
+                    comboBox3.Items.Add("amuk");
+                    comboBox3.Items.Add("tamuk");
+                    comboBox3.Items.Add("amuk");
+                    break;
+
+            }
+        }
+
+        
+    }
+}
